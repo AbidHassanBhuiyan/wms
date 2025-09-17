@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['username'])) {
+      header("Location: /wms/view/Login.php");
+      exit();
+  }
  
 $e1 = $_SESSION['e1'] ?? '';
 $e2 = $_SESSION['e2'] ?? '';
@@ -20,7 +25,7 @@ unset($_SESSION['e1'], $_SESSION['e2'], $_SESSION['e3'], $_SESSION['msg']);
 <h1>Change Password</h1>
 <nav>
 <a href="/wms/view/Dashboard.php">Dashboard</a>
-<a href="/wms/view/Logout.php">Logout</a>
+<a href="/wms/controllers/Logout.php">Logout</a>
 </nav>
 </header>
 <div class="dashboard-wrapper">
@@ -38,20 +43,18 @@ unset($_SESSION['e1'], $_SESSION['e2'], $_SESSION['e3'], $_SESSION['msg']);
 </aside>
  
   <div class="container">
-<h2>Change Password</h2>
  
     <?php if (!empty($msg)): ?>
-<p style="color:green"><?php echo $msg; ?></p>
-<?php endif; ?>
+<p style="color:green"><?php echo $msg; ?></p><?php endif; ?>
  
 <form action="/wms/controllers/ChangePasswordAction.php" method="post" onsubmit="return validateChangePassword(this)">
-<input type="password" name="old" placeholder="Current Password" required>
+<input type="password" name="old" placeholder="Current Password">
 <span id="oldPassErr" style="color:red"><?php echo $e1; ?></span>
  
-      <input type="password" name="new" placeholder="New Password" required>
+      <input type="password" name="new" placeholder="New Password">
 <span id="newPassErr" style="color:red"><?php echo $e2; ?></span>
  
-      <input type="password" name="confirm" placeholder="Confirm New Password" required>
+      <input type="password" name="confirm" placeholder="Confirm New Password">
 <span id="confirmPassErr" style="color:red"><?php echo $e3; ?></span>
  
 <button type="submit">Update Password</button>

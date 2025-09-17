@@ -1,4 +1,5 @@
 <?php
+
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $customer = trim($_POST['customer'] ?? '');
