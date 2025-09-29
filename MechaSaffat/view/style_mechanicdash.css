@@ -1,0 +1,73 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #092344;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2563eb;
+      color: rgb(248, 249, 251);
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+    }
+    nav {
+      background: #1e40af;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: rgb(234, 235, 234);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0f172a;
+      margin-top: 30px;
+      text-align: left;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #273b8c;
+      color: rgb(236, 227, 227);
+    }
+    input, textarea, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1e40af;
+    }
